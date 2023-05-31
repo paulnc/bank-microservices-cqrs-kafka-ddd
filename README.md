@@ -1,7 +1,6 @@
-#  Bank Microservices, Spring Boot, Domain Driven Design
+#   Bank Microservices, CQRS, Kafka, Domain Driven Design (DDD)
 
-
-##### Java Bank Microservices created using Domain Driven Design (DDD), CQRS & Event Sourcing. 
+#####  Bank Microservices created using Java, Domain Driven Design (DDD), CQRS & Event Sourcing. 
 
 - Project's code is structured  using Domain-Driven-Design. 
 - Project uses a combination of MySQL and kafka as an event store.
