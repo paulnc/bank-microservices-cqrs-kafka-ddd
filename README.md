@@ -9,7 +9,7 @@
 - Built with Spring Boot, Apache Kafka, MySQL, MongoDB.
 
 
-<img src = "resources/ProjectArchitectureOverview.png" alt = Project Architecture Overview" title = "Project Architecture Overview"/>
+<img src = "resources/ProjectArchitectureOverview.png" alt = "Project Architecture Overview" title = "Project Architecture Overview"/>
 
 
 ```
