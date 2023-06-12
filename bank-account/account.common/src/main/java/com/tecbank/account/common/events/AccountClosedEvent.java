@@ -14,11 +14,12 @@
 
 package com.tecbank.account.common.events;
 
+import com.tecbank.cqrs.core.events.BaseEvent;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
-public class AccountClosedEvent {
+public class AccountClosedEvent extends BaseEvent {
 
 }
