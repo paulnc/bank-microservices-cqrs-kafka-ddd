@@ -14,11 +14,12 @@
 
 package com.tecbank.account.cmd.api.commands;
 
+import com.tecbank.cqrs.core.commands.BaseCommand;
 import lombok.Data;
 
 @Data
 
-public class WithdrawFundsCommand {
+public class WithdrawFundsCommand extends BaseCommand {
     private double amount;
 
 }
