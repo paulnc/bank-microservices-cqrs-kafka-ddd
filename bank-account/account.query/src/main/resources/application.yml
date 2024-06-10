@@ -12,6 +12,8 @@ spring:
     username: root
     password: techbank1234
   kafka:
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
     consumer:
       bootstrap-servers: localhost:9092
       group-id: bankaccConsumer
