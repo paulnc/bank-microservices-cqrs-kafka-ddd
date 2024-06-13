@@ -18,12 +18,14 @@ import com.tecbank.cqrs.core.Infrastructure.QueryDispatcher;
 import com.tecbank.cqrs.core.domain.BaseEntity;
 import com.tecbank.cqrs.core.queries.BaseQuery;
 import com.tecbank.cqrs.core.queries.QueryHandlerMethod;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.List;
 
+@Service
 public class AccountQueryDispatcher implements QueryDispatcher {
     private final Map<Class<? extends BaseQuery>, List<QueryHandlerMethod>> routes = new HashMap<>();
 

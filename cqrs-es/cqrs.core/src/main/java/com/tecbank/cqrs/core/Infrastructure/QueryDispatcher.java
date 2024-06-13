@@ -1,7 +1,6 @@
 package com.tecbank.cqrs.core.Infrastructure;
 
 import com.tecbank.cqrs.core.domain.BaseEntity;
-import com.tecbank.cqrs.core.events.BaseEvent;
 import com.tecbank.cqrs.core.queries.BaseQuery;
 import com.tecbank.cqrs.core.queries.QueryHandlerMethod;
 
