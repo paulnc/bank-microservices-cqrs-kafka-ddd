@@ -1,4 +1,4 @@
-package com.tecbank.account.query.infrastructure.handlers.consumers;
+package com.tecbank.account.query.infrastructure.consumers;
 
 import com.tecbank.account.common.events.AccountClosedEvent;
 import com.tecbank.account.common.events.AccountOpenedEvent;
