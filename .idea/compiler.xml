@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,13 +13,6 @@
         <module name="account.cmd" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="account.cmd" target="17" />
-      <module name="account.common" target="17" />
-      <module name="account.query" target="17" />
-      <module name="bank-account" target="18" />
-      <module name="cqrs.core" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

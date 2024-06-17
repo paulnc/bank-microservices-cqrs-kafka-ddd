@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2023. Paul Nwabudike
- * Since: February 2023
+ * Copyright (c) 2024. Paul Nwabudike
+ * Since: June 2024
  * Author: Paul Nwabudike
- * Name: BaseCommand.java
+ * Name: AccountLookupResponse
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at   http://www.apache.org/licenses/LICENSE-2.0
@@ -12,20 +12,24 @@
  *
  */
 
-package com.tecbank.cqrs.core.commands;
+package com.tecbank.account.query.api.dto;
 
-import com.tecbank.cqrs.core.messages.Message;
+import com.tecbank.account.common.dto.BaseResponse;
+import com.tecbank.account.query.domain.BankAccount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @Data
+@SuperBuilder
 @NoArgsConstructor
-
-public abstract class BaseCommand extends Message {
-    public BaseCommand (String id){
-        super(id);
+@AllArgsConstructor
+public class AccountLookupResponse extends BaseResponse {
+    private List<BankAccount> accounts;
+    public AccountLookupResponse(String message) {
+        super(message);
     }
-
 }
