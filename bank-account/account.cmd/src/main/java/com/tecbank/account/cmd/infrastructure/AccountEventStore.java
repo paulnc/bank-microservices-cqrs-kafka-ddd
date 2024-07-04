@@ -7,6 +7,7 @@ import com.tecbank.cqrs.core.events.BaseEvent;
 import com.tecbank.cqrs.core.events.EventModel;
 import com.tecbank.cqrs.core.exceptions.AggregateNotFoundException;
 import com.tecbank.cqrs.core.exceptions.ConcurrencyException;
+import com.tecbank.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class AccountEventStore implements EventStore {
+    @Autowired
+    private EventProducer eventProducer;
 
     @Autowired
     private EventStoreRepository eventStoreRepository;
@@ -40,7 +43,9 @@ public class AccountEventStore implements EventStore {
                     .build();
             var persistedEvent = eventStoreRepository.save(eventModel);
             if (persistedEvent != null) {
-                //TODO Produce event to Kafka
+                //DONE: Produce event to Kafka
+                eventProducer.produce(event.getClass().getSimpleName(), event);
+
             }
         }
     }
@@ -52,5 +57,14 @@ public class AccountEventStore implements EventStore {
             throw new AggregateNotFoundException("Incorrect Account ID Provided");
         }
         return eventStream.stream().map(x -> x.getEventData()).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getAggregeIds() {
+        var eventStream = eventStoreRepository.findAll();
+        if (eventStream == null || eventStream.isEmpty()) {
+            throw  new IllegalStateException("Could not retrieve event stream from the event store!");
+        }
+        return eventStream.stream().map(EventModel::getAggregateIdentifier).distinct().collect(Collectors.toList());
     }
 }
